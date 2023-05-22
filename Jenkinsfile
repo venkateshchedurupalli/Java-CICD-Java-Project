@@ -25,27 +25,7 @@ pipeline {
             }
         }
 
-       //stage('Code Testing') {
-		//	if(ENABLE_TESTING == "true"){
-          //  steps {
-            //   withSonarQubeEnv('sonar-9'){
-              //   sh "mvn  sonar:sonar" 
-				// }
-                //}
-		     //}
-		  //else{
-		   //echo "skipping testing";
-		  //}
-        //}
-		
-	stage('Test') {
-           when {
-                expression{
-                    params.executeTests
-                }
-            }
-  
-  
+   
         
           stage('Test'){
             steps {
@@ -64,4 +44,4 @@ pipeline {
     
     }
 }
-}
+
