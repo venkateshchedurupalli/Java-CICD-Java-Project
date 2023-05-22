@@ -11,13 +11,12 @@ pipeline {
 
   
 
-    stages {
-            
+    stages {      
           stage('Checkout'){
             steps{
              git 'https://github.com/venkateshchedurupalli/JavaProject.git'
             }
-		}
+	}
 
 
         stage('Build') {
@@ -39,7 +38,7 @@ pipeline {
 		  //}
         //}
 		
-		stage('Test') {
+	stage('Test') {
            when {
                 expression{
                     params.executeTests
@@ -48,7 +47,7 @@ pipeline {
   
   
         
-           stage('Test'){
+          stage('Test'){
             steps {
                 echo 'Hello world!' 
                 sh 'java -version'
@@ -62,5 +61,6 @@ pipeline {
                 echo 'Deploying the application....'
             }
         }
+    
     }
 }
